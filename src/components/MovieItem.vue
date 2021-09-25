@@ -1,5 +1,5 @@
 <template>
-  <h1>{{ movie.Title }} </h1>
+  <h1>{{ movie.imdbID }} </h1>
 </template>
 
 <script>
