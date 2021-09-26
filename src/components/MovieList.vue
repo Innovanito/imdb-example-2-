@@ -1,10 +1,16 @@
 <template>
   <div class="container">
-    <div class="inner">
-      <div class="message">
+    <div 
+      :class="{ 'no-result': !movie.length }"
+      class="inner">
+      <div 
+        v-if="message"
+        class="message">
         {{ message}}
       </div>
-      <div class="movies">
+      <div 
+        v-else
+        class="movies">
         <MovieItem 
         v-for="movie in movies"
         :key="movie.imdbID"
@@ -41,6 +47,7 @@ export default {
     background-color: $gray-200;
     padding: 10px 0;
     border-radius: 4px;
+    text-align: center;
   }
   .movies {
     display: flex;
